@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rock Paper Scissors</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #ff00cc, blue);
+            color: white;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            margin-top: 40px;
+            font-size: 45px;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px white;
+            }
+
+            to {
+                text-shadow: 0 0 25px yellow;
+            }
+        }
+
+        .box {
+            background: rgba(255, 255, 255, 0.15);
+            width: 420px;
+            margin: auto;
+            margin-top: 40px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            animation: pop 1s ease;
+        }
+
+        @keyframes pop {
+            from {
+                transform: scale(0);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+
+        button {
+            padding: 15px 25px;
+            margin: 10px;
+            border: none;
+            border-radius: 12px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            background: yellow;
+            color: black;
+        }
+
+        .result {
+            margin-top: 25px;
+            font-size: 28px;
+            font-weight: bold;
+            animation: bounce 1s infinite alternate;
+        }
+
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-8px);
+            }
+        }
+
+        p {
+            font-size: 22px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🎮 Rock Paper Scissors</h1>
+
+    <div class="box">
+
+        <form method="POST">
+            <button type="submit" name="choice" value="rock">🪨 Rock</button>
+            <button type="submit" name="choice" value="paper">📄 Paper</button>
+            <button type="submit" name="choice" value="scissors">✂️ Scissors</button>
+        </form>
+
+        <p>Your Choice: {{ user }}</p>
+        <p>Computer Choice: {{ computer }}</p>
+
+        <div class="result">{{ result }}</div>
+
+    </div>
+
+</body>
+
+</html>
